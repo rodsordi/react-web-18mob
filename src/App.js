@@ -1,21 +1,21 @@
 import React from 'react';
-import './App.css';
-import Header from './components/Header/index'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Routes from './routes';
+
+import Header from './components/Header';
+
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Header title={ "Mercado Livre" } />
+      <Header title={ "Mercado Livre" } />
 
-        <Router>
-          <Switch>
-            <Route exact path="/teste" component={ () => (<div>TESTE</div>)} />
-          </Switch>
-        </Router>
-      </header>
+      <Router>
+        <Routes />
+      </Router>
     </div>
   );
 }
